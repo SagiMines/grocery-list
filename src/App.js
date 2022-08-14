@@ -27,14 +27,19 @@ function App() {
     const currentValue = e.target.getAttribute('value');
     data.order.isShoppingArrayEmpty = false;
     let counter = 0;
+    //Pushes the clicked grocery to the shopping list
     data.shopping.push(currentValue);
+    //Counts the total items in the shopping list
     data.summary.totalItems += 1;
     for (const grocery of data.groceries) {
       if (grocery.name === currentValue) {
+        //Reduces the quantity of the grocery in the grocerylist after being clicked on
         grocery.quantity -= 1;
+        //If the quantity of the grocery is 0 than we will move it to the end of the list
         if (!grocery.quantity) {
           moveToEndOfTheArray(grocery, counter);
         }
+        // Adds the price of the clicked grocery to the total order price
         data.summary.totalPrice += grocery.price;
         break;
       }
@@ -44,6 +49,7 @@ function App() {
   };
 
   const handleOrderClick = () => {
+    //If the user tries to order without adding groceries to the list he will get a message
     if (data.shopping.length) {
       data.order.orderClick = !data.order.orderClick;
     } else {
