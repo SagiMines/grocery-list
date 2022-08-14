@@ -12,6 +12,7 @@ function OrderModal(props) {
           <List data={props.data} title="summary" />
         </Modal.Body>
         <Modal.Footer>
+          <Modal.Title>Total Price: {props.totalPrice}$</Modal.Title>
           <Button form="order-summary-modal" variant="primary" type="submit">
             Close
           </Button>
