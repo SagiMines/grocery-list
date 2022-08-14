@@ -4,7 +4,11 @@ import './List.css';
 function List(props) {
   return (
     <ListGroup as="ol" numbered>
-      <h3 className="list-title">{props.title} List</h3>
+      <h3 className="list-title">
+        {props.title === 'Grocery' || props.title === 'Shopping'
+          ? `${props.title} List`
+          : ''}{' '}
+      </h3>
       {props.data.map((grocery, id) => (
         <ListGroup.Item
           disabled={
