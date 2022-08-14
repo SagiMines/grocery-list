@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import List from './List';
+import { groceries } from './DAL/data.js';
+import { useState } from 'react';
+import { Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
+  const [data, setData] = useState({ groceries, shopping: [] });
+
+  const handleGroceryClick = e => {
+    const currentValue = e.target.getAttribute('value');
+    data.shopping.push(currentValue);
+    for (const grocery of data.groceries) {
+      if (grocery.name === currentValue) {
+        grocery.quantity -= 1;
+        break;
+      }
+    }
+    setData({ ...data });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Row>
+        <Col>
+          <List
+            onClick={handleGroceryClick}
+            data={data.groceries}
+            title="Grocery"
+          />
+        </Col>
+        <Col>
+          <List data={data.shopping} title="Shopping" />
+        </Col>
+      </Row>
     </div>
   );
 }
