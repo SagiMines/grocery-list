@@ -16,7 +16,7 @@ export const groceries = [
   {
     name: 'Pepper',
     price: 5,
-    quantity: 50,
+    quantity: 10,
     thumbnailImage:
       'https://www.gardeningknowhow.com/wp-content/uploads/2021/05/chili-pepper.jpg',
   },

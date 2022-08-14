@@ -1,3 +1,7 @@
+html {
+  overflow-x: hidden;
+}
+
 .order-btn {
   margin: 1rem;
   width: 50%;
@@ -5,6 +9,10 @@
 
 .row {
   justify-content: center;
+}
+
+.headlines {
+  text-align: center;
 }
 
 .no-items-in-list {

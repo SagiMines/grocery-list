@@ -1,0 +1,7 @@
+.summary-div {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.summary-div > * {
+  margin: 0.5rem;
+}

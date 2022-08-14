@@ -4,12 +4,7 @@ import List from './List';
 function OrderModal(props) {
   return (
     <Form id="order-summary-modal">
-      <Modal
-        show
-        // onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
+      <Modal show backdrop="static" keyboard={false}>
         <Modal.Header closeButton>
           <Modal.Title>Order Summary</Modal.Title>
         </Modal.Header>

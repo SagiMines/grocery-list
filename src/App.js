@@ -90,8 +90,9 @@ function App() {
         </p>
       )}
       {!data.order.isSure && data.order.orderClick && (
-        <div>
-          <h2>Are you sure?</h2>
+        <Row>
+          <h2 className="headlines">Are you sure?</h2>
+
           <Button
             onClick={handleIsSureClick}
             className="order-btn"
@@ -106,7 +107,7 @@ function App() {
           >
             No
           </Button>
-        </div>
+        </Row>
       )}
 
       {data.order.isSure && <OrderModal data={data.shopping} />}
