@@ -18,16 +18,26 @@ function App() {
 
   const handleGroceryClick = e => {
     const currentValue = e.target.getAttribute('value');
+    let counter = 0;
     data.shopping.push(currentValue);
     data.summary.totalItems += 1;
     for (const grocery of data.groceries) {
       if (grocery.name === currentValue) {
         grocery.quantity -= 1;
+        if (!grocery.quantity) {
+          moveToEndOfTheArray(grocery, counter);
+        }
         data.summary.totalPrice += grocery.price;
         break;
       }
+      counter += 1;
     }
     setData({ ...data });
+  };
+
+  const moveToEndOfTheArray = (currentGrocery, counter) => {
+    data.groceries.splice(counter, 1);
+    data.groceries.push(currentGrocery);
   };
 
   return (

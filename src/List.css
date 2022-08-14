@@ -1,3 +1,7 @@
 .ms-2 > img {
   width: 50px;
 }
+
+.out-of-stock {
+  color: red;
+}

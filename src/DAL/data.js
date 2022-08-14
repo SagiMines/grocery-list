@@ -2,7 +2,7 @@ export const groceries = [
   {
     name: 'Tomato',
     price: 2,
-    quantity: 100,
+    quantity: 2,
     thumbnailImage:
       'https://saverafresh.com/wp-content/uploads/2021/08/istockphoto-466175630-612x612-1.jpg',
   },
