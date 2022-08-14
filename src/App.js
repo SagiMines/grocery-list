@@ -116,7 +116,9 @@ function App() {
         </Row>
       )}
 
-      {data.order.isSure && <OrderModal data={data.shopping} />}
+      {data.order.isSure && (
+        <OrderModal data={data.shopping} totalPrice={data.summary.totalPrice} />
+      )}
     </Row>
   );
 }
